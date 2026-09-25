@@ -24,7 +24,12 @@ export default async function AdminServiciosPage() {
             Los cambios de precio y duración se reflejan de inmediato en la web y en la app.
           </p>
         </div>
-        <Link href="/admin/servicios/nuevo" className="boton-primario">Nuevo servicio</Link>
+        <div className="flex flex-wrap gap-2">
+          <Link href="/admin/servicios/importar" className="boton-secundario">
+            Carga masiva
+          </Link>
+          <Link href="/admin/servicios/nuevo" className="boton-primario">Nuevo servicio</Link>
+        </div>
       </div>
 
       <div className="mt-8 overflow-x-auto">

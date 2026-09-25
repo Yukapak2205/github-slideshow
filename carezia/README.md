@@ -21,6 +21,10 @@ Sin AgendaPro ni intermediarios: la agenda, los paquetes y los cobros son tuyos.
 - Agenda del día con confirmar, marcar realizada, no asistió y cancelar.
 - Bloqueos de horario: vacaciones, feriados, una tarde libre.
 - Servicios, precios, duraciones y abonos editables en caliente.
+- Carga masiva desde una planilla: subir un CSV, pegar celdas o leer una
+  hoja de Google Sheets, con vista previa antes de guardar nada.
+- Exportación a CSV con las mismas columnas, para editar en Excel y volver
+  a subir.
 - Paquetes: cuántas sesiones, qué servicios cubren, cuánto duran.
 - Equipo: quién hace qué y su horario semanal.
 - Ajustes: datos del negocio, reglas de la agenda y textos de la portada.
@@ -145,10 +149,37 @@ pesos enteros. Nada de decimales flotantes.
 **Los servicios se archivan, no se borran.** Borrarlos dejaría citas históricas
 sin referencia.
 
+**La carga masiva identifica por nombre, no por posición.** Cada servicio se
+reconoce por el identificador derivado de su nombre, así que volver a subir la
+misma planilla corregida actualiza en vez de duplicar. Es lo que permite el ciclo
+exportar → editar en Excel → volver a subir.
+
+**La vista previa y la importación recorren el mismo camino.** `analizarPlanilla`
+es una función pura sin base de datos: lo que se muestra en pantalla es
+exactamente lo que se va a guardar. El texto se vuelve a analizar al confirmar,
+en vez de confiar en lo que devuelve el navegador.
+
 **Los recordatorios no se reintentan en bucle.** Cada cita se marca con
 `reminder_sent_at` en cuanto se procesa, incluso si el correo falló. Repetir el
 envío cada hora ante un fallo de Resend sólo multiplicaría el problema; el error
 queda en el log.
+
+## Migrar desde otro sistema de agenda
+
+Exporta tus servicios desde el sistema anterior, guarda el archivo como CSV y
+súbelo en **Panel → Servicios → Carga masiva**. Se aceptan encabezados en varios
+nombres (`servicio`, `tratamiento`, `valor`, `duración`…), precios escritos como
+`$45.000` o `45000`, y duraciones como `60`, `60 min`, `1h30` o `1:30`. Las
+categorías que no existan se crean solas.
+
+La pantalla muestra fila por fila qué se creará, qué se actualizará y qué tiene
+errores, antes de escribir nada.
+
+**Una advertencia importante si vienes de otro sistema con reservas activas:**
+los dos sistemas agendan sobre los mismos boxes y ninguno conoce al otro, así que
+mantener ambos tomando reservas a la vez produce sobreventa. Conviene fijar una
+fecha de corte, dejar que el sistema antiguo sólo cumpla las citas ya tomadas y
+recibir las nuevas sólo aquí.
 
 ## Comandos
 
