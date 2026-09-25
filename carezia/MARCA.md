@@ -8,34 +8,45 @@ portada se editan desde `/admin/ajustes` sin tocar nada.
 
 ## 1. Qué es Carezia
 
-Un centro de estética facial y corporal que trabaja con criterio clínico y sin
-promesas infladas. No vende transformaciones: vende un proceso con seguimiento.
+Un centro de estética integral. No es una boutique facial ni un spa de
+relajación: el catálogo real son 60 servicios en once frentes —depilación
+láser, masajes reductivos y post operatorio, limpieza facial, uñas, cejas y
+pestañas, Tensamax, Therapress y evaluación corporal InBody.
 
-**Nombre.** De *care* (cuidado) con una terminación suave, latina, femenina sin
-ser infantil. Se pronuncia *ca-re-sia*.
+**Esa amplitud es el dato que manda.** La mitad del catálogo se vende en planes
+de 8, 10 o 15 sesiones, no en visitas sueltas. Carezia no vive de que alguien
+entre una vez: vive de que alguien se comprometa a un proceso de meses y lo
+termine. Todo lo que sigue se ordena alrededor de eso.
+
+**Nombre.** De *care* (cuidado) con una terminación suave y latina. Se pronuncia
+*ca-re-sia*.
 
 ---
 
 ## 2. Misión
 
-Hacer que el cuidado de la piel sea una decisión informada y no una compra por
-impulso: diagnóstico real, protocolos progresivos y expectativas honestas.
+Acompañar procesos largos de cuidado corporal y facial con resultados medibles,
+para que quien empieza un plan de diez sesiones llegue a la décima sabiendo
+exactamente qué cambió.
 
 ## 3. Visión
 
-Ser el lugar al que una persona vuelve durante años porque le dijimos la verdad
-sobre su piel, incluso cuando esa verdad significaba venderle menos.
+Ser el lugar donde los tratamientos por sesiones se terminan. Que la referencia
+de Carezia no sea «me hice una», sino «hice el plan completo y funcionó».
 
 ## 4. Valores
 
-1. **Diagnóstico antes que catálogo.** Ninguna sesión empieza sin entender qué
-   necesita esa piel ese día.
-2. **Progresión, no milagros.** Los resultados se construyen por capas. Lo
-   decimos antes de cobrar, no después.
-3. **Transparencia total.** Precio, duración y alcance publicados. Lo que se ve
-   en la web es lo que se cobra en el box.
-4. **Menos es más.** Si un tratamiento no aporta, no se recomienda, aunque esté
-   en la lista de precios.
+1. **La sesión número siete importa tanto como la primera.** El riesgo de un
+   plan largo es el abandono a mitad de camino. La constancia se sostiene con
+   seguimiento, no con descuentos.
+2. **Se mide antes y se mide después.** Con InBody y con registro fotográfico
+   cuando corresponde. Un resultado que no se puede mostrar es una opinión.
+3. **Cada plan se explica completo antes de cobrarse.** Cuántas sesiones, cada
+   cuánto, qué se espera a la mitad y qué al final. Nadie compra diez sesiones
+   sin saber en qué se está metiendo.
+4. **Lo que no corresponde, no se vende.** Si una piel o un cuerpo no es
+   candidato a un tratamiento, se dice. Un plan mal vendido se abandona en la
+   sesión tres y se lleva la confianza con él.
 
 ---
 
@@ -47,10 +58,10 @@ sobre su piel, incluso cuando esa verdad significaba venderle menos.
 
 | Sí decimos | No decimos |
 |---|---|
-| «Tu piel necesita constancia, no intensidad.» | «¡Resultados desde la primera sesión!» |
-| «Esta sesión no borra la mancha, la aclara un grado.» | «Adiós manchas para siempre» |
-| «Te conviene esperar dos semanas entre sesiones.» | «¡Últimos cupos, reserva ya!» |
-| «No te lo recomiendo para tu tipo de piel.» | «Este es nuestro tratamiento estrella» |
+| «Son ocho sesiones cada cuatro semanas. El resultado se ve desde la cuarta.» | «¡Resultados desde la primera sesión!» |
+| «El láser reduce el vello, no lo elimina para siempre.» | «Adiós al vello definitivamente» |
+| «Tu tipo de piel necesita más sesiones. Te conviene saberlo ahora.» | «¡Últimos cupos, reserva ya!» |
+| «Este plan no es para ti. Te sirve más el otro.» | «Este es nuestro tratamiento estrella» |
 
 **Reglas de escritura**
 
@@ -61,7 +72,11 @@ sobre su piel, incluso cuando esa verdad significaba venderle menos.
 - Nunca se promete un resultado que dependa de factores que no controlamos.
 
 **Cómo hablamos de precios.** Siempre visible, siempre completo, nunca «desde».
-Si hay un abono para reservar, se dice en la misma pantalla.
+En un plan se muestran las dos cifras: el total y cuánto sale cada sesión. Si
+hay un abono para reservar, se dice en la misma pantalla.
+
+**Cómo hablamos de planes.** Número de sesiones, frecuencia y qué se espera en
+cada tramo. Un plan de diez sesiones vendido sin calendario es una promesa vaga.
 
 ---
 
@@ -113,11 +128,13 @@ visible en toda la web (contorno cobre de 2 px). Se respeta
 
 **Instagram (`@carezia.cl`)** — cuenta principal.
 
-- **Grilla:** alternancia de tres tipos de post. (1) Educativo sobre piel,
-  fondo crema con tipografía Fraunces. (2) Resultado real con la condición
-  explicada: qué se trató, cuántas sesiones, qué no cambió. (3) Detrás de
-  escena: producto, textura, mano trabajando.
-- **Nunca:** antes y después sin contexto de tiempo ni número de sesiones.
+- **Grilla:** alternancia de tres tipos de post. (1) Educativo: cómo funciona el
+  láser, por qué hay que esperar entre sesiones, qué hace el drenaje. (2)
+  Resultado real con la condición explicada: qué se trató, **cuántas sesiones
+  llevaba**, qué no cambió. (3) Detrás de escena: aparatología, textura, mano
+  trabajando.
+- **Nunca:** antes y después sin decir cuántas sesiones tomó. Es la regla que
+  más se rompe en el rubro y la que más confianza destruye.
 - **Stories:** agenda del día, recordatorios de cuidado, respuestas a preguntas.
   Siempre con el enlace de reserva.
 - **Bio:** `Estética consciente · Providencia` + enlace directo a `/reservar`.

@@ -59,7 +59,15 @@ Crea un proyecto en [supabase.com](https://supabase.com) y ejecuta, en orden,
 los archivos de `supabase/migrations/` desde el SQL Editor:
 
 1. `0001_schema.sql` — tablas, reglas y políticas de seguridad.
-2. `0002_seed.sql` — servicios, paquetes y horarios de ejemplo.
+2. `0002_seed.sql` — ajustes y contenido de ejemplo.
+3. `0003_recordatorios_calendario.sql` — recordatorios y feeds de calendario.
+4. `0004_catalogo_real.sql` — el catálogo real de Carezia: 60 servicios, 11
+   categorías y 30 planes de sesiones. Reemplaza el catálogo de ejemplo del
+   paso 2 y trae marcado con `PENDIENTE` lo que falta confirmar (dirección
+   del local y equipo real).
+
+El mismo catálogo está en `datos/servicios-carezia.csv`, listo para la carga
+masiva del panel si prefieres cargarlo desde ahí.
 
 Luego, para darte acceso al panel, crea tu usuario entrando una vez en
 `/ingresar` y ejecuta:

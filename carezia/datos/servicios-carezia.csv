@@ -1,0 +1,61 @@
+﻿nombre;categoria;descripcion;precio;duracion_min;buffer_min;abono;activo;destacado;orden
+Limpieza facial profunda de espalda;Limpieza facial;;34990;60;10;0;si;no;1
+Esmaltado permanente;Manicure y pedicure;;15990;60;10;0;si;no;2
+Rubber gel;Manicure y pedicure;;20990;120;10;0;si;no;3
+Soft gel, 1 o 2 tonos;Manicure y pedicure;;23990;120;10;0;si;no;4
+Soft gel con diseños o efectos;Manicure y pedicure;;25990;120;10;0;si;no;5
+Kapping gel + esmaltado;Manicure y pedicure;;25000;135;10;0;si;no;6
+Esmaltado permanente con diseño;Manicure y pedicure;;18990;90;10;0;si;no;7
+Perfilado de cejas + pigmentación;Diseño de cejas y pestañas;;20990;45;10;0;si;no;8
+Dermaplaning + limpieza facial profunda;Limpieza facial;;29990;60;10;0;si;no;9
+Pestañas 6D;Diseño de cejas y pestañas;;42000;120;10;0;si;no;10
+Pestañas 5D;Diseño de cejas y pestañas;;40000;120;10;0;si;no;11
+Pestañas 4D;Diseño de cejas y pestañas;;32000;120;10;0;si;no;12
+Lifting de pestañas + pigmentación + vitamina;Diseño de cejas y pestañas;;29990;40;10;0;si;no;13
+Lifting de pestañas + vitamina;Diseño de cejas y pestañas;;19990;40;10;0;si;no;14
+Laminado de cejas + pigmentación + visajismo;Diseño de cejas y pestañas;;29990;60;10;0;si;no;15
+Visajismo de cejas + pigmentación;Diseño de cejas y pestañas;;19990;40;10;0;si;no;16
+Visajismo de cejas;Diseño de cejas y pestañas;;13990;45;10;0;si;no;17
+Lipoenzimas + masaje + drenaje linfático;Sesiones individuales;;40000;60;10;0;si;no;18
+Depilación láser bozo;Depilación láser;;5000;30;10;0;si;no;19
+Depilación láser hombro, brazo y espalda;Depilación láser;;18750;60;10;0;si;no;20
+Tensamax piernas completas;Tensamax;;17000;60;10;0;si;no;21
+Peptona + vitamina C + protocolo de glúteo;Sesiones individuales;;35000;60;10;0;si;no;22
+Hidrolipoclasia TR7 + masaje reductivo + drenaje linfático + metaloterapia;Sesiones individuales;;35000;60;10;0;si;no;23
+Protocolo glúteos premium 360;Masajes y tratamientos corporales;;27000;60;10;0;si;no;24
+PDRN salmón + limpieza facial profunda;Limpieza facial;;17500;120;10;0;si;no;25
+Tratamiento de brazos;Masajes y tratamientos corporales;;10000;60;10;0;si;no;26
+Promoción 2x1 compartida con otra persona;Promociones;;23120;60;10;0;si;no;27
+Relajante con piedras calientes + descontracturante;Masajes relajantes;;53990;60;10;0;si;no;28
+Kinesiología de brazo y hombro;Therapress;;16660;45;10;0;si;no;29
+Masaje en piernas + Therapress;Therapress;;34990;45;10;0;si;no;30
+Masaje relajante con piedras calientes + Therapress o manta térmica;Masajes relajantes;;56990;90;10;0;si;no;31
+Limpieza facial profunda;Limpieza facial;;29990;60;10;0;si;no;32
+Limpieza facial profunda + Dermapen;Limpieza facial;;34990;60;10;0;si;no;33
+Depilación láser barbilla;Depilación láser;;7500;45;10;0;si;no;34
+Depilación láser bikini;Depilación láser;;8620;40;10;0;si;no;35
+Depilación láser media pierna;Depilación láser;;7500;40;10;0;si;no;36
+Drenaje lipo papada;Masajes y tratamientos corporales;;15000;45;10;0;si;no;37
+Transforma tu cuerpo;Promociones;;21670;60;10;0;si;no;38
+Evaluación gratuita;Evaluación corporal;;0;40;10;0;no;no;39
+Drenaje linfático cuerpo completo, sin aparatología;Masajes y tratamientos corporales;;10000;60;10;0;si;no;40
+InBody;Evaluación corporal;;25000;30;10;0;si;no;41
+Tratamiento reductivo reafirmante de brazos y piernas;Masajes y tratamientos corporales;;24000;60;10;0;si;no;42
+Tratamiento reductivo reafirmante de abdomen, cintura y espalda;Masajes y tratamientos corporales;;30000;60;10;0;si;no;43
+Tratamiento cuerpo completo;Masajes y tratamientos corporales;;37500;90;10;0;si;no;44
+Tensamax cuerpo completo;Tensamax;;26670;60;10;0;si;no;45
+Tensamax abdomen, cintura y espalda;Tensamax;;30000;60;10;0;si;no;46
+Relajante con piedras calientes;Masajes relajantes;;44990;60;10;0;si;no;47
+Reduce y moldea;Masajes y tratamientos corporales;;27000;60;10;0;si;no;48
+Post operatorio;Masajes y tratamientos corporales;;27000;60;10;0;si;no;49
+Levantamiento de glúteos y reafirmante;Masajes y tratamientos corporales;;25000;60;10;0;si;no;50
+Anticelulítico + levantamiento de glúteos;Masajes y tratamientos corporales;;26000;60;10;0;si;no;51
+Descontracturante;Masajes relajantes;;39990;60;10;0;si;no;52
+Depilación láser rostro completo;Depilación láser;;10000;45;10;0;si;no;53
+Depilación láser rebaje completo + interglúteo + línea alba;Depilación láser;;11250;45;10;0;si;no;54
+Depilación láser piernas completas;Depilación láser;;12500;45;10;0;si;no;55
+Depilación láser hombros, antebrazos y brazos;Depilación láser;;11250;45;10;0;si;no;56
+Depilación láser glúteos;Depilación láser;;6250;40;10;0;si;no;57
+Depilación láser axilas;Depilación láser;;7500;40;10;0;si;no;58
+Depilación láser cuerpo completo;Depilación láser;;37500;90;10;0;si;no;59
+Relajante;Masajes relajantes;;35000;60;10;0;si;no;60
