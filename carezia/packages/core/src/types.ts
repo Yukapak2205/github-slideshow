@@ -149,6 +149,8 @@ export interface BookingSettings {
   cancel_window_hours: number
   require_account: boolean
   auto_confirm: boolean
+  /** Horas antes de la cita en que se envía el recordatorio. 0 = no enviar. */
+  reminder_hours: number
 }
 
 export interface HomeValue {
@@ -183,6 +185,7 @@ export const DEFAULT_BOOKING: BookingSettings = {
   cancel_window_hours: 24,
   require_account: false,
   auto_confirm: true,
+  reminder_hours: 24,
 }
 
 export const DEFAULT_HOME: HomeSettings = {

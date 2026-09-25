@@ -14,6 +14,8 @@ Sin AgendaPro ni intermediarios: la agenda, los paquetes y los cobros son tuyos.
 - Compra de paquetes de sesiones; al reservar, el crédito se descuenta solo.
 - Cuenta con próximas horas, historial y sesiones restantes. Cancelación propia.
 - Se puede reservar sin cuenta, dejando sólo un correo (configurable).
+- Correo de confirmación y recordatorio automático antes de la cita.
+- Botón para agregar la hora a Google Calendar o al calendario del teléfono.
 
 **Para el local (`/admin`)**
 - Agenda del día con confirmar, marcar realizada, no asistió y cancelar.
@@ -22,6 +24,8 @@ Sin AgendaPro ni intermediarios: la agenda, los paquetes y los cobros son tuyos.
 - Paquetes: cuántas sesiones, qué servicios cubren, cuánto duran.
 - Equipo: quién hace qué y su horario semanal.
 - Ajustes: datos del negocio, reglas de la agenda y textos de la portada.
+- Cada profesional tiene una dirección privada para ver su agenda de
+  Carezia dentro de Google Calendar o del iPhone.
 
 **Nada de esto requiere tocar código.** Un cambio de precio en `/admin` se ve en
 la web y en la app al instante.
@@ -95,10 +99,30 @@ Apunta el webhook del proveedor a:
 - Stripe → `https://tudominio.cl/api/webhooks/stripe`
 - Mercado Pago → `https://tudominio.cl/api/webhooks/mercadopago`
 
-### 5. Correos (opcional)
+### 5. Correos y recordatorios (opcional)
 
 Con `RESEND_API_KEY` y `EMAIL_FROM` se envía la confirmación de cada reserva. Si
 faltan, la reserva se agenda igual y se registra en el log.
+
+Para los recordatorios, agrega `CRON_SECRET` (genera uno con
+`openssl rand -hex 32`). En Vercel el cron de `vercel.json` ya llama cada hora a
+`/api/cron/reminders`; fuera de Vercel, llama tú a esa ruta con la cabecera
+`Authorization: Bearer <CRON_SECRET>`.
+
+Cuántas horas antes se avisa se ajusta en `/admin/ajustes` (0 desactiva el
+recordatorio).
+
+### 6. Calendario
+
+No requiere cuenta de Google ni permisos OAuth:
+
+- La clienta agrega su hora con un botón, a Google Calendar o por archivo `.ics`.
+- Cada profesional tiene en `/admin/equipo` una dirección privada que se suscribe
+  desde Google Calendar (Otros calendarios → Desde URL) o desde el iPhone.
+
+La sincronización es **de Carezia hacia el calendario**, no al revés: la agenda
+del local es la única fuente de verdad de las horas disponibles, y un evento
+creado en Google no debería poder ocupar un box.
 
 ## Decisiones que vale la pena conocer
 
@@ -120,6 +144,11 @@ pesos enteros. Nada de decimales flotantes.
 
 **Los servicios se archivan, no se borran.** Borrarlos dejaría citas históricas
 sin referencia.
+
+**Los recordatorios no se reintentan en bucle.** Cada cita se marca con
+`reminder_sent_at` en cuanto se procesa, incluso si el correo falló. Repetir el
+envío cada hora ante un fallo de Resend sólo multiplicaría el problema; el error
+queda en el log.
 
 ## Comandos
 

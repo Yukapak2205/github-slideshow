@@ -336,6 +336,7 @@ export async function guardarAjustes(
     cancel_window_hours: Number(formData.get('cancel_window_hours')),
     require_account: formData.get('require_account') === 'on',
     auto_confirm: formData.get('auto_confirm') === 'on',
+    reminder_hours: Number(formData.get('reminder_hours')),
   }
 
   const numerosValidos =
@@ -344,7 +345,10 @@ export async function guardarAjustes(
     booking.min_lead_hours >= 0 &&
     booking.max_advance_days >= 1 &&
     booking.max_advance_days <= 365 &&
-    booking.cancel_window_hours >= 0
+    booking.cancel_window_hours >= 0 &&
+    Number.isFinite(booking.reminder_hours) &&
+    booking.reminder_hours >= 0 &&
+    booking.reminder_hours <= 168
 
   if (!numerosValidos) {
     return { ok: false, mensaje: 'Revisa los números de la agenda.' }

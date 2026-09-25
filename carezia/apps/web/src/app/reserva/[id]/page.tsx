@@ -6,6 +6,7 @@ import {
   canCancel,
   formatLocalTime,
   formatMoney,
+  googleCalendarUrl,
 } from '@carezia/core'
 import { getSettings } from '@/lib/settings'
 import { createAdminClient } from '@/lib/supabase/admin'
@@ -39,7 +40,7 @@ export default async function ReservaPage({
   const { data: cita } = await admin
     .from('appointments')
     .select(
-      `id, client_id, starts_at, status, payment_status, price_amount, purchase_id,
+      `id, client_id, starts_at, ends_at, status, payment_status, price_amount, purchase_id,
        guest_name, guest_email, client_notes,
        services(name, duration_min),
        staff(display_name, title),
@@ -49,6 +50,16 @@ export default async function ReservaPage({
     .maybeSingle()
 
   if (!cita) notFound()
+
+  const lugar = uno(cita.locations)
+  const enlaceGoogle = googleCalendarUrl({
+    uid: `${cita.id}@carezia`,
+    title: `${uno(cita.services)?.name ?? 'Sesión'} · ${business.name}`,
+    description: `Con ${uno(cita.staff)?.display_name ?? 'nuestro equipo'}`,
+    location: [lugar?.name, lugar?.address].filter(Boolean).join(' — '),
+    startsAt: cita.starts_at,
+    endsAt: cita.ends_at,
+  })
 
   const enPlazo = canCancel(cita.starts_at, booking.cancel_window_hours)
   const cancelable = cita.status !== 'cancelled' && new Date(cita.starts_at) > new Date()
@@ -102,6 +113,28 @@ export default async function ReservaPage({
           {cita.client_notes && <Dato etiqueta="Tus notas" valor={cita.client_notes} />}
         </dl>
       </div>
+
+      {cita.status !== 'cancelled' && (
+        <div className="mt-6">
+          <p className="text-sm font-medium">Agrégala a tu calendario</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <a
+              href={enlaceGoogle}
+              target="_blank"
+              rel="noreferrer"
+              className="boton-secundario !px-4 !py-2 text-xs"
+            >
+              Google Calendar
+            </a>
+            <a
+              href={`/api/appointments/${cita.id}/calendario`}
+              className="boton-secundario !px-4 !py-2 text-xs"
+            >
+              Apple Calendar y otros (.ics)
+            </a>
+          </div>
+        </div>
+      )}
 
       {cancelable && (esDueno || esInvitado) && (
         <div className="mt-6">

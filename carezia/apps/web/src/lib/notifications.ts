@@ -95,3 +95,73 @@ function escapeHtml(value: string): string {
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] ?? c,
   )
 }
+
+interface ReminderEmail {
+  to: string
+  clientName: string
+  serviceName: string
+  staffName: string
+  locationName: string
+  locationAddress?: string | null
+  startsAt: string
+  timezone: string
+  businessName: string
+  cancelWindowHours: number
+  manageUrl: string
+  calendarUrl: string
+}
+
+/**
+ * Recordatorio previo a la cita.
+ *
+ * Igual que la confirmación, no revienta si Resend no está configurado:
+ * la tarea programada seguirá marcando la cita para no reintentar en
+ * bucle, y el negocio funciona aunque el correo no salga.
+ */
+export async function sendAppointmentReminder(data: ReminderEmail): Promise<boolean> {
+  const apiKey = process.env.RESEND_API_KEY
+  const from = process.env.EMAIL_FROM
+  if (!apiKey || !from) {
+    console.info('[correo] Resend no configurado; se omite el recordatorio para', data.to)
+    return false
+  }
+
+  const fecha = formatLongDate(data.startsAt, data.timezone)
+  const hora = formatLocalTime(new Date(data.startsAt), data.timezone)
+
+  const html = `
+    <div style="font-family:ui-sans-serif,system-ui,sans-serif;max-width:520px;margin:0 auto;color:#2A2422">
+      <h1 style="font-size:22px;font-weight:600;margin:0 0 4px">Te esperamos ${escapeHtml(fecha)}</h1>
+      <p style="color:#6B5F58;margin:0 0 24px">
+        Hola ${escapeHtml(data.clientName)}, este es el recordatorio de tu hora.
+      </p>
+      <table style="width:100%;border-collapse:collapse;background:#FBF7F2;border-radius:12px">
+        ${row('Servicio', data.serviceName)}
+        ${row('Fecha', `${fecha} · ${hora} h`)}
+        ${row('Profesional', data.staffName)}
+        ${row('Lugar', [data.locationName, data.locationAddress].filter(Boolean).join(' — '))}
+      </table>
+      <p style="margin:24px 0 8px">
+        <a href="${data.calendarUrl}" style="color:#B0705A">Agregar a mi calendario</a>
+      </p>
+      <p style="color:#6B5F58;font-size:14px;margin:8px 0">
+        ¿No puedes venir? Avísanos con al menos ${data.cancelWindowHours} horas de anticipación
+        desde <a href="${data.manageUrl}" style="color:#B0705A">tu reserva</a>.
+      </p>
+      <p style="color:#9B8E86;font-size:12px;margin-top:32px">${escapeHtml(data.businessName)}</p>
+    </div>
+  `
+
+  try {
+    await new Resend(apiKey).emails.send({
+      from,
+      to: data.to,
+      subject: `Recordatorio · tu hora en ${data.businessName} es ${fecha} a las ${hora}`,
+      html,
+    })
+    return true
+  } catch (error) {
+    console.error('[correo] No se pudo enviar el recordatorio:', error)
+    return false
+  }
+}

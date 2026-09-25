@@ -76,6 +76,15 @@ export default async function AjustesPage() {
                 valor={booking.cancel_window_hours}
                 ayuda="Cancelando antes de este plazo, el crédito del paquete se devuelve."
               />
+              <Campo
+                etiqueta="Recordatorio (horas antes)"
+                nombre="reminder_hours"
+                tipo="number"
+                min={0}
+                max={168}
+                valor={booking.reminder_hours}
+                ayuda="Correo automático antes de la cita. 0 = no enviar."
+              />
             </div>
             <div className="space-y-3">
               <Interruptor

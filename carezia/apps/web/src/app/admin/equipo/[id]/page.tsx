@@ -156,6 +156,27 @@ export default async function EditarProfesionalPage({
           </div>
         </div>
       )}
+
+      {/* ---------- calendario suscribible ---------- */}
+      {profesional?.calendar_token && (
+        <div className="border-t border-[var(--color-arena)] pt-10">
+          <h3 className="text-xl">Su agenda en Google Calendar</h3>
+          <p className="mt-1 text-sm text-[var(--color-tinta-suave)]">
+            Copia esta dirección y agrégala en Google Calendar (Otros calendarios →
+            Desde URL) o en el iPhone (Ajustes → Calendario → Suscrito). Las citas
+            aparecerán junto al resto de su agenda y se actualizan solas.
+          </p>
+
+          <code className="mt-4 block overflow-x-auto rounded-[var(--radius-suave)] border border-[var(--color-arena-oscura)] bg-white px-4 py-3 text-xs">
+            /api/calendar/{profesional.calendar_token}
+          </code>
+
+          <p className="mt-3 text-xs text-[var(--color-tinta-tenue)]">
+            Esta dirección es privada: quien la tenga puede ver esta agenda. Es de sólo
+            lectura, así que lo que se agende en Google no vuelve a Carezia.
+          </p>
+        </div>
+      )}
     </div>
   )
 }
