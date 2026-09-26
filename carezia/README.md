@@ -53,6 +53,10 @@ reimplementa: consume los mismos endpoints que la web.
 
 ## Puesta en marcha
 
+**¿Quieres correrlo en tu computador?** [`CORRER-LOCAL.md`](./CORRER-LOCAL.md)
+lo explica paso a paso, con un script que levanta la base de datos local y deja
+todo configurado. Lo que sigue es el camino manual, o para desplegar en la nube.
+
 ### 1. Base de datos
 
 Crea un proyecto en [supabase.com](https://supabase.com) y ejecuta, en orden,
