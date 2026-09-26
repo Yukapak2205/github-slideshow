@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Carezia",
+    "slug": "carezia",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "carezia",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#FBF7F2"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "cl.carezia.app"
+    },
+    "android": {
+      "package": "cl.carezia.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#FBF7F2"
+      }
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "apiUrl": "https://carezia.cl"
+    }
+  }
+}
