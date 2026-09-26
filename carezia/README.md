@@ -3,6 +3,8 @@
 Sitio web, sistema de agendamiento propio y app móvil para un centro de estética.
 Sin AgendaPro ni intermediarios: la agenda, los paquetes y los cobros son tuyos.
 
+- **Estado y pendientes:** [`ESTADO.md`](./ESTADO.md)
+- **Correr en tu computador:** [`CORRER-LOCAL.md`](./CORRER-LOCAL.md)
 - **Manual de marca:** [`MARCA.md`](./MARCA.md)
 - **Esquema de base de datos:** [`supabase/migrations/`](./supabase/migrations)
 
